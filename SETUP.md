@@ -45,7 +45,7 @@ This guide walks you through obtaining your Spotify and Discord credentials to r
 1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 2. Log in with your Spotify account (create one if needed)
 3. Click **"Create an App"**
-4. Name it: `Spotify Lyrics Sync`
+4. Name it: `Spotify Discord Lyrics Status`
 5. Accept terms and create the app
 6. You now have:
    - **Client ID** - save this for `SPOTIFY_CLIENT_ID`
@@ -54,8 +54,10 @@ This guide walks you through obtaining your Spotify and Discord credentials to r
 ### 2.2 Set Redirect URI
 
 1. In your app settings, click **"Edit Settings"**
-2. In **Redirect URIs**, add: `http://localhost:8888/callback`
+2. In **Redirect URIs**, add: `https://example.com/callback`
 3. Click **"Save"**
+
+⚠️ **Note**: Spotify now blocks `localhost` redirect URIs. Use `https://example.com/callback` instead.
 
 ---
 
@@ -69,12 +71,12 @@ This requires the OAuth2 Authorization Code Flow. Follow these steps:
 
 1. In your browser, visit this URL (replace `YOUR_CLIENT_ID`):
 ```
-https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=http://localhost:8888/callback&scope=user-read-playback-state
+https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=https://example.com/callback&scope=user-read-playback-state
 ```
 
 2. Click **"Agree"** to authorize the app
-3. You'll be redirected to `http://localhost:8888/callback?code=AUTHORIZATION_CODE`
-4. **Copy the code value** (everything after `code=` and before `&state`)
+3. You'll be redirected to `https://example.com/callback?code=AUTHORIZATION_CODE`
+4. **Copy the authorization code** from the URL (everything after `code=`)
 
 #### Step 3A.2: Exchange Code for Refresh Token
 
@@ -83,15 +85,11 @@ https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=co
 
 ```powershell
 $auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("YOUR_CLIENT_ID:YOUR_CLIENT_SECRET"))
-$body = @{
-    grant_type = "authorization_code"
-    code = "YOUR_CODE"
-    redirect_uri = "http://localhost:8888/callback"
-} | ConvertTo-Json
+$body = "grant_type=authorization_code&code=YOUR_CODE&redirect_uri=https://example.com/callback"
 
 $response = Invoke-WebRequest -Uri "https://accounts.spotify.com/api/token" `
     -Method POST `
-    -Headers @{"Authorization" = "Basic $auth"; "Content-Type" = "application/json"} `
+    -Headers @{"Authorization" = "Basic $auth"; "Content-Type" = "application/x-www-form-urlencoded"} `
     -Body $body
 
 $response.Content | ConvertFrom-Json | Select-Object -Property refresh_token
@@ -104,7 +102,7 @@ $response.Content | ConvertFrom-Json | Select-Object -Property refresh_token
 ```bash
 curl -X POST "https://accounts.spotify.com/api/token" \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=authorization_code&code=YOUR_CODE&redirect_uri=http://localhost:8888/callback&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET"
+  -d "grant_type=authorization_code&code=YOUR_CODE&redirect_uri=https://example.com/callback&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET"
 ```
 
 The response JSON will contain `refresh_token`.

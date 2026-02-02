@@ -1,0 +1,38 @@
+{
+  "name": "spotify-discord-lyrics-status",
+  "version": "1.0.0",
+  "description": "Synchronizes Spotify playback with Discord custom status using real-time synced lyrics from LRCLIB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "discord-status",
+    "spotify",
+    "lyrics",
+    "lrclib",
+    "sync",
+    "selfbot",
+    "custom-status"
+  ],
+  "author": "ryxu-xo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryxu-xo/spotify-discord-lyrics-status"
+  },
+  "homepage": "https://github.com/ryxu-xo/spotify-discord-lyrics-status#readme",
+  "bugs": {
+    "url": "https://github.com/ryxu-xo/spotify-discord-lyrics-status/issues"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
