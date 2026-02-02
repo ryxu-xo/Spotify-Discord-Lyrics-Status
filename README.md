@@ -43,7 +43,7 @@ Automatically sync your Spotify playback to your Discord custom status with real
 ### 1. Clone or Download the Repository
 
 ```bash
-cd spotify-discord-lyrics-sync
+cd spotify-discord-lyrics-status
 ```
 
 ### 2. Install Dependencies
@@ -93,7 +93,7 @@ SYNC_OFFSET=500
 ### Getting Your Spotify Refresh Token
 
 1. Register your app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Set up Redirect URI in your app settings (e.g., `http://localhost:8888/callback`)
+2. Set up Redirect URI in your app settings (e.g., `https://example.com`)
 3. Use the [Spotify Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/) to obtain your refresh token
 
 Example flow using curl:
@@ -330,3 +330,4 @@ For issues or feature requests, please open an issue on the repository.
 ---
 
 **Built with ❤️ for Discord and Spotify enthusiasts by [ryxu-xo](https://github.com/ryxu-xo)**
+
