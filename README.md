@@ -342,6 +342,7 @@ For issues or feature requests, please open an issue on the repository.
 
 If you find this useful, please star the repository and share it!
 
-[![GitHub stars](https://img.shields.io/github/stars/ryxu-xo/spotify-discord-lyrics-sync?style=social)](https://github.com/ryxu-xo/spotify-discord-lyrics-sync)
+[![GitHub stars](https://img.shields.io/github/stars/ryxu-xo/spotify-discord-lyrics-status?style=social)](https://github.com/ryxu-xo/spotify-discord-lyrics-status)
+
 
 
