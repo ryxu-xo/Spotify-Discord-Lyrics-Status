@@ -34,7 +34,7 @@ Automatically sync your Spotify playback to your Discord custom status with real
 ## Prerequisites
 
 - **Node.js**: v18.0.0 or higher (Latest LTS recommended)
-- **Discord User Token**: Your personal Discord account token (see setup guide)
+- **Discord User Token**: Your personal Discord account token (see [setup](https://github.com/ryxu-xo/Spotify-Discord-Lyrics-Status/main/SETUP.md) guide)
 - **Spotify Developer Credentials**: Register at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 - **Spotify Refresh Token**: Obtained through OAuth2 Authorization Code Flow
 
@@ -330,4 +330,5 @@ For issues or feature requests, please open an issue on the repository.
 ---
 
 **Built with ❤️ for Discord and Spotify enthusiasts by [ryxu-xo](https://github.com/ryxu-xo)**
+
 
