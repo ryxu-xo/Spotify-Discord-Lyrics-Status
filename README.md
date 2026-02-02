@@ -1,3 +1,8 @@
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Spotify API](https://img.shields.io/badge/Spotify-API-1DB954?logo=spotify)
+![Discord](https://img.shields.io/badge/Discord-Status-5865F2?logo=discord)
+
 # Spotify Discord Lyrics Status
 
 Automatically sync your Spotify playback to your Discord custom status with real-time synced lyrics from LRCLIB.
@@ -330,5 +335,6 @@ For issues or feature requests, please open an issue on the repository.
 ---
 
 **Built with ❤️ for Discord and Spotify enthusiasts by [ryxu-xo](https://github.com/ryxu-xo)**
+
 
 
