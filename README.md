@@ -336,5 +336,12 @@ For issues or feature requests, please open an issue on the repository.
 
 **Built with ❤️ for Discord and Spotify enthusiasts by [ryxu-xo](https://github.com/ryxu-xo)**
 
+---
+
+## ⭐ Star This Repository
+
+If you find this useful, please star the repository and share it!
+
+[![GitHub stars](https://img.shields.io/github/stars/ryxu-xo/spotify-discord-lyrics-sync?style=social)](https://github.com/ryxu-xo/spotify-discord-lyrics-sync)
 
 
